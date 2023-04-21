@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<h1> TodoApp</h1>
+<h1 id="title"> TodoApp</h1>
 
 <table>
     <thead>
@@ -12,11 +12,18 @@
         <th>Is completed</th>
     </thead>
     <tbody>
+        {% for todo in todos %}
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td> <a href="{%url 'todo' todo.id%}" class="todo-title">{{todo.title}}</a></td>
+            <td>{{todo.description|slice:":20"}}...</td>
+            <td>{% if todo.is_completed %}  <input type="checkbox" name="Checkbox" id="checkbox" checked > {% else %} <input type="checkbox" name="Checkbox" id="Checkbox"> {% endif %}</td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
+
+<div id="button-div">
+
+    <button type="button" > <a href="{% url 'create_todo'%}">Add Todo</a></button>
+</div>
 {% endblock content %}

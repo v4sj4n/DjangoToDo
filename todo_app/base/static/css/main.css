@@ -1,15 +1,62 @@
-body{
+body {
     background-color: #1f1f1f;
-    color: whitesmoke
+    color: #f5f5f5;
+    font-family: 'Pathway Extreme', sans-serif;
 }
 
-h1{
-    font-size:  2rem;
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem
+}
+
+thead {
+    background-color: #f2f2f2
+}
+
+thead th {
+    font-size: 2rem;
+    color: #000;
+    padding: 10px 20px;
+}
+
+tbody {
+    border: solid #fff
+}
+
+tbody td {
+    font-size: 1rem;
+    text-align:center;
+    padding: 5px 10px;
+}
+
+#title {
+    font-family: "Merriweather", sans-serif;
+    font-size: 3rem;
     text-align: center;
     margin-top: 5rem;
 }
-table{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
+
+button {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Pathway Extreme', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
 }
+
+.todo-title{
+    all:unset;
+    color: #f5f5f5;
+    font-weight: bold;
+}
+
+input[type="checkbox"]:checked {
+    background: white;
+    color: #1f1f1f;
+  }
