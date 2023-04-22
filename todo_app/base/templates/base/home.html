@@ -10,6 +10,8 @@
         <th>Title</th>
         <th>Description</th>
         <th>Is completed</th>
+        <th>Edit:</th>
+        <th>Delete:</th>
     </thead>
     <tbody>
         {% for todo in todos %}
@@ -17,6 +19,7 @@
             <td> <a href="{%url 'todo' todo.id%}" class="todo-title">{{todo.title}}</a></td>
             <td>{{todo.description|slice:":20"}}...</td>
             <td>{% if todo.is_completed %}  <input type="checkbox" name="Checkbox" id="checkbox" checked > {% else %} <input type="checkbox" name="Checkbox" id="Checkbox"> {% endif %}</td>
+            <td><a href="{% url 'update_todo' todo.id %}">Edit</a></td>
         </tr>
         {% endfor %}
     </tbody>

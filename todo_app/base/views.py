@@ -6,6 +6,12 @@ def home(request):
     context = {"todos": Todo.objects.all()}
     return render(request, "base/home.html", context)
 
+def todo(request, pk):
+    todo = Todo.objects.get(id=pk)
+    context = {"todo": todo}
+    return render(request, "base/todo.html", context)
+
+
 def createTodo(request):
     form = TodoForm
     if request.method == "POST":
@@ -15,9 +21,16 @@ def createTodo(request):
             return redirect("home")
 
     context = {"form": form}
-    return render(request, "base/new_todo.html", context)
+    return render(request, "base/todo_form.html", context)
 
-def todo(request, pk):
+def updateTodo(request, pk):
     todo = Todo.objects.get(id=pk)
-    context = {"todo": todo}
-    return render(request, "base/todo.html", context)
+    form = TodoForm(instance=todo)
+
+    if request.method == 'POST':
+        form = TodoForm(request.POST, instance=todo)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    context = {'form': form}
+    return render(request, 'base/todo_form.html', context)
