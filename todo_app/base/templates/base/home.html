@@ -20,7 +20,7 @@
             <td>{{todo.description|slice:":20"}}...</td>
             <td>{% if todo.is_completed %}  <input type="checkbox" name="Checkbox" id="checkbox" checked > {% else %} <input type="checkbox" name="Checkbox" id="Checkbox"> {% endif %}</td>
             <td><a href="{% url 'update_todo' todo.id %}">Edit</a></td>
-            <td><a href="{% url 'delete_room' todo.id %}">Delete</a></td>
+            <td><a href="{% url 'delete_todo' todo.id %}">Delete</a></td>
         </tr>
         {% endfor %}
     </tbody>

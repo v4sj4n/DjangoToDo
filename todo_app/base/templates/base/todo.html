@@ -1,20 +1,9 @@
-{% extends 'base.html' %}
-
-{% block title %}Todo{% endblock title %}
-
+{% extends 'base.html' %} 
+{% block title %}Todo{% endblock title %} 
 {% block content %}
-<h1 id="title"> TodoApp</h1>
+<h1 id="title">TodoApp</h1>
 <div>
-
-<h2>{{todo.title}}</h2>
-<p>{{todo.description}}</p>
-{% if todo.is_completed %}  <input type="checkbox" name="Checkbox" id="checkbox" checked > {% else %} <input type="checkbox" name="Checkbox" id="Checkbox"> {% endif %}
-
-</div>
-
-
-<div id="button-div">
-
-    <button type="button" > <a href="{% url 'create_todo'%}">Add Todo</a></button>
+  <h2>{{todo.title}}</h2>
+  <p>{{todo.description}}</p>
 </div>
 {% endblock content %}
