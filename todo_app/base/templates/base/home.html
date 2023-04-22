@@ -18,9 +18,9 @@
         <tr>
             <td> <a href="{%url 'todo' todo.id%}" class="todo-title">{{todo.title}}</a></td>
             <td>{{todo.description|slice:":20"}}...</td>
-            <td>{% if todo.is_completed %}  <input type="checkbox" name="Checkbox" id="checkbox" checked > {% else %} <input type="checkbox" name="Checkbox" id="Checkbox"> {% endif %}</td>
-            <td><a href="{% url 'update_todo' todo.id %}">Edit</a></td>
-            <td><a href="{% url 'delete_todo' todo.id %}">Delete</a></td>
+            <td>{% if todo.is_completed %}  <p>Yes</p> {% else %} <p>No</p>{% endif %}</td>
+            <td><a href="{% url 'update_todo' todo.id %}" class="links">Edit</a></td>
+            <td><a href="{% url 'delete_todo' todo.id %}" class="links">Delete</a></td>
         </tr>
         {% endfor %}
     </tbody>
